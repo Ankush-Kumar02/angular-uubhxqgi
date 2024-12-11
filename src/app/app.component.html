@@ -1,0 +1,21 @@
+<h1>{{ name }}</h1>
+<div class="coach">
+  <div class="row" *ngFor="let row of rows">
+    <div
+      class="seat"
+      *ngFor="let seat of row"
+      [class.booked]="seat"
+    ></div>
+  </div>
+</div>
+<div>
+  <input
+    type="number"
+    [(ngModel)]="numSeats"
+    placeholder="Enter number of seats to book"
+    min="1"
+    max="7"
+  />
+  <button (click)="bookSeats(numSeats)">Book Seats</button>
+</div>
+<p>{{ message }}</p>
